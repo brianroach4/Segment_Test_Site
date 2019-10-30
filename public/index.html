@@ -8,8 +8,8 @@
     manifest.json provides metadata used when your web app is added to the
     homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
 -->
-<link rel="manifest" href="%PUBLIC_URL%/manifest.json">
-<link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+<link rel="manifest" href="Segment_Test_Site/manifest.json">
+<link rel="shortcut icon" href="Segment_Test_Site/favicon.ico">
 <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 <script type="text/javascript">
 var accounts = [
@@ -90,7 +90,37 @@ if (randNum < 25) {
     visitor = 'visitor2@' + accString + '.com';
     role = 'read-only';
 }
+</script>
 
+<script>
+    !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src="https://cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
+    analytics.load("6IdsvOTfgQp8iw9BWtfZxf4ZLLvU4lCJ");
+    analytics.page();
+    }}();
+
+    analytics.identify(visitorParam || visitor || 'VISITOR-UNIQUE-ID', {
+    full_name: visitorParam || visitor || 'VISITOR-UNIQUE-ID',
+    email: visitorParam || visitor || 'VISITOR-UNIQUE-ID',
+    role: role || 'user',
+    age: 29,
+    gender: 'male',
+    groupId: accountParam || account_id,
+    createdDate: 1989-12-29T02:05:00-05:00
+});
+    analytics.group(accountParam || account_id, {
+    name: accountParam || account_id, 
+    industry: "Technology",
+    employees: 329, 
+    plan: "Enterprise", 
+    contractStart: 2017-03-21T08:00:00-05:00,
+    contractEnd: 2020-04-20T08:00:00-05:00,
+    contractValue: "$80,000"
+});
+
+analytics.track("Registered", {
+  plan: "Pro Annual", 
+  accountType: "Facebook"
+});
 </script>
 
 <!-- PENDO SNIPPET GOES HERE!  -->
