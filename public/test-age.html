@@ -1,0 +1,46 @@
+<html>
+    <head>
+            <title></title>
+    </head>
+    <body>
+        <script>
+        
+            
+function getAge(dateString) {
+    var today = new Date();
+    var birthDate = new Date(dateString);
+    var age = today.getFullYear() - birthDate.getFullYear();
+    var m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+    return age;
+}
+
+
+var person = {   
+    visitor: 001,
+    age: function(){
+        return getAge(this.birthDate)
+    },
+    birthDate: "1955-01-17",
+    full_name: 'Augustus ' + 'Gloop',
+    gender: 'male',
+    homeTown: 'Dusseldorf' + ', Germany',
+    jobTitle: "Butcher's son",
+    role: 'user',
+} 
+
+console.log(person.age())
+
+person.birthDate = 1928-06-10;
+console.log(person.age())
+
+
+        </script>
+    </body>
+</html>
+
+
+
+
