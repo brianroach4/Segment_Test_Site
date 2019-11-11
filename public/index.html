@@ -68,162 +68,28 @@ let randNum = Math.random() * 100;
 let visitor;
 let role;
 
-function getAge(dateString) {
-    var today = new Date();
-    var birthDate = new Date(dateString);
-    var age = today.getFullYear() - birthDate.getFullYear();
-    var m = today.getMonth() - birthDate.getMonth();
-    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-        age--;
-    }
-    return age;
-}
-
-/*var person = {   
-    visitor: 001,
-    age: function(){
-        return getAge(this.birthDate)
-    },
-    birthDate: "1955-01-17",
-    full_name: 'Augustus ' + 'Gloop',
-    gender: 'male',
-    homeTown: 'Dusseldorf' + ', Germany',
-    jobTitle: "Butcher's son",
-    role: 'user',
-} */
-
-if (randNum < 10) {   
-    visitor = 001;
-    age = function(){
-        return getAge(this.birthDate)};
-    birthDate = "1955-01-17";
-    email =  'Gus@' + accString + '.com';
-    full_name = 'Augustus' + ' Gloop';
-    gender = 'male';
-    homeTown = 'Dusseldorf' + ', Germany';
-    jobTitle = "Butcher's son";
-    role = 'user';
-    groupId = accountParam || account_id}
-
-else if (randNum <= 20) {
-    visitor = 002;
-    age = function(){
-        return getAge(this.birthDate)};
-    birthDate = "1932-11-07";
-    email =  'Bernie@' + accString + '.com';
-    full_name = 'Bernard' + ' Marx'
-    gender = 'male';
-    homeTown = 'London' + ', World State';
-    jobTitle = 'Conditioning Coach';
-    role = 'super user';
-    groupId = accountParam || account_id} 
-
-else if (randNum <= 30) {
-    visitor = 003;
-    age = function(){
-        return getAge(this.birthDate)};
-    birthDate = "1947-12-25";
-    email =  'Cindy@' + accString + '.com';
-    full_name = 'Cinderella' + ' Lou Whoo';
-    gender = 'female';
-    homeTown = 'Whoville' + ', Specktonia';
-    jobTitle = 'Youth Organizer';
-    role = 'read-only',
-    groupId = accountParam || account_id}
- 
-else if (randNum <= 40) {
-    visitor = 004;
-    age = function(){
-        return getAge(this.birthDate)};
-    birthDate = "1899-05-29";
-    email =    'Daisy@' + accString + '.com';
-    full_name = 'Daisy' + ' Fay' + ' Buchanan';
-    gender = 'female';
-    homeTown = 'Louisville' + ', Kentucky';
-    jobTitle = 'Socialite';
-    role = 'user';
-    groupId = accountParam || account_id} 
-    
-else if (randNum <= 50) {
-    visitor = 005;
-    age = function(){
-        return getAge(this.birthDate)};
-    birthDate = "1932-10-16";
-    email =    'Daisy@' + accString + '.com';
-    full_name = 'Lucy' + ' Pevensie';
-    gender = 'female';
-    homeTown = 'London' + ', England';
-    jobTitle = 'Queen of Narnia';
-    role = 'admin',
-    groupId = accountParam || account_id} 
-
-else if (randNum <= 60) {
-    visitor = 006;
-    age = function(){
-        return getAge(this.birthDate)},
-    birthDate = "1989-01-14";
-    email = 'Maggie@' + accString + '.com';
-    full_name = 'Margaret' + ' Simpson' + ' Jr.';
-    gender = 'female';
-    homeTown = 'Springfield' + ', Oregon';
-    jobTitle = 'Punk Rock Band Vocalist';
-    role = 'read-only';
-    groupId = accountParam || account_id} 
-    
-else if (randNum <= 70) {
-    visitor = 007;
-    age = function(){
-        return getAge(this.birthDate)
-    },
-    birthDate = "-1197-04-16";
-    email = 'Penny@' + accString + '.com';
-    full_name = 'Penelope' + ' of Ithaca';
-    gender = 'female';
-    homeTown = 'Ithaca' + ', Greece';
-    jobTitle = 'Queen of Ithaca/Weaver';
+if (randNum < 25) {
+    visitor = 'visitor1@' + accString + '.com';
     role = 'admin';
-    groupId = accountParam || account_id}
-     
-else if (randNum <= 80) {
-    visitor = 008;
-    age = function(){
-        return getAge(this.birthDate)
-    },
-    birthDate = "1948-12-04";
-    email = 'Ozzy@' + accString + '.com';
-    full_name = 'Oswald' + ' Osbourne';
-    gender = 'male';
-    homeTown = 'Birmingham' + ', England';
-    jobTitle = 'Lead Singer';
-    role = 'read-only';
-    groupId = accountParam || account_id}
-
-else if (randNum <= 90) {
-    visitor = 
-    age = function(){
-        return getAge(this.birthDate)
-    };
-    birthDate = "1915-07-29";
-    email = 'Sam@' + accString + '.com';
-    full_name = 'Samwise' + ' Gamgee';
-    gender = 'male';
-    homeTown = 'Hobbiton' + ', The Shire';
-    jobTitle = 'Gardener';
+} else if (randNum <= 50) {
+    visitor = 'visitor6@' + accString + '.com';
+    role = 'admin';
+} else if (randNum <= 65) {
+    visitor = 'visitor4@' + accString + '.com';
     role = 'user';
-    groupId = accountParam || account_id}
-
-else {
-    visitor = 010,
-    age = function(){
-        return getAge(this.birthDate)},
-    birthDate = "1945-07-09";
-    email = 'Wes@' + accString + '.com';
-    full_name = 'Wesley' + ' Mantooth'
-    gender = 'male';
-    homeTown = 'San Diego' + ', California'
-    jobTitle = 'Anchorman';
-    role = 'admin',
-    groupId = accountParam || account_id}
+} else if (randNum <= 80) {
+    visitor = 'visitor7@' + accString + '.com';
+    role = 'user';
+} else if (randNum <= 90) {
+    visitor = 'visitor5@' + accString + '.com';
+    role = 'user';
+} else if (randNum <= 95) {
+    visitor = 'visitor3@' + accString + '.com';
+    role = 'read-only';
+} else {
+    visitor = 'visitor2@' + accString + '.com';
+    role = 'read-only';
+}
 </script>
 
 <script>
