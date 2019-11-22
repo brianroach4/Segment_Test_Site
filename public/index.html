@@ -66,31 +66,6 @@
       */
             //let accString = account_id.replace(/\s/g, "");
             
-            let randNum = Math.ceil(Math.random() * 100);
-            let visitor = getVisitor("001");
-            let id;
-            let age;
-            let birdDate;
-            let email;
-            let full_name;
-            let gender;
-            let homeTown;
-            let jobTitle;
-            let role;
-            let tags;
-            let groupId;
-
-            function getAge(dateString) {
-              var today = new Date();
-              var birthDate = new Date(dateString);
-              var age = today.getFullYear() - birthDate.getFullYear();
-              var m = today.getMonth() - birthDate.getMonth();
-              if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-                age--;
-              }
-              return age;
-            }
-
             // 1) Initech - Peter Gibbons, Milton Waddams, Bill Lumbergh, Michael Bolton, Samir Nagheenanajar
             var visitors = [
             {
@@ -648,6 +623,32 @@
               groupId: "1005"
             }
             ];
+
+
+            let randNum = Math.ceil(Math.random() * 100);
+            let visitor = getVisitor("001");
+            let id;
+            let age;
+            let birdDate;
+            let email;
+            let full_name;
+            let gender;
+            let homeTown;
+            let jobTitle;
+            let role;
+            let tags;
+            let groupId;
+
+            function getAge(dateString) {
+              var today = new Date();
+              var birthDate = new Date(dateString);
+              var age = today.getFullYear() - birthDate.getFullYear();
+              var m = today.getMonth() - birthDate.getMonth();
+              if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+              }
+              return age;
+            }
 
             var accounts = [
               {
