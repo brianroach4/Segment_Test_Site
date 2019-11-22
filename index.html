@@ -1,228 +1,904 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name="theme-color" content="#000000"><link rel="manifest" href="/Segment_Test_Site/manifest.json"><link rel="shortcut icon" href="/Segment_Test_Site/favicon.ico"><script defer="defer" src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script><script type="text/javascript">var accounts = [
-    "Stark Industries", 
-    "Wayne Enterprises",
-    "Hooli",
-    "Dunder Mifflin US",
-    "Willy Wonka Industrial",
-    "Pied Piper",
-    "Dunder Mifflin EU",
-    "Associated Strategies",
-    "Krusty Krab",
-    "Sterling Cooper"
-];
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"/><meta name="theme-color" content="#000000"/><link rel="manifest" href="/Segment_Test_Site/manifest.json"/><link rel="shortcut icon" href="/Segment_Test_Site/favicon.ico"/><script defer="defer" src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script><script type="text/javascript">let month = new Date().getMonth();
 
-let month = new Date().getMonth()
-let weight;
+      /*      let weight;
 
-if (month % 2) {
-    weight = [ 300, 175, 125, 100, 75, 75, 50, 50, 25, 25 ];
-} else {
-    weight = [ 300, 25, 50, 50, 75, 75, 100, 125, 175, 25 ];
-}
+            if (month % 2) {
+              weight = [300, 175, 125, 100, 75, 75, 50, 50, 25, 25];
+            } else {
+              weight = [300, 25, 50, 50, 75, 75, 100, 125, 175, 25];
+            }
+      */
+            function getParameterByName(name, url) {
+              if (!url) url = window.location.href;
 
-function getParameterByName(name, url) {
-    if (!url) url = window.location.href;
+              var cleanName = name.replace(/[\[\]]/g, "\\$&");
+              var regex = new RegExp("[?&]" + cleanName + "(=([^&#]*)|&|#|$)");
+              var results = regex.exec(url);
+              if (!results) return null;
+              if (!results[2]) return "";
 
-    var cleanName = name.replace(/[\[\]]/g, '\\$&');
-    var regex = new RegExp('[?&]' + cleanName + '(=([^&#]*)|&|#|$)');
-    var results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
+              return decodeURIComponent(results[2].replace(/\+/g, " "));
+            }
 
-    return decodeURIComponent(results[2].replace(/\+/g, ' '));
-}
+        //    let accountParam = getParameterByName("accountId");
+          //  let visitorParam = getParameterByName("visitorId");
 
-let accountParam = getParameterByName('accountId');
-let visitorParam = getParameterByName('visitorId');
+            /*
+            function pickUsingWeights(items, weights) {
+              var total = 0;
+              var ranges = weights.slice(0);
 
-function pickUsingWeights(items, weights) {
-    var total = 0;
-    var ranges = weights.slice(0);
+              for (var i = 0, len = weights.length; i < len; i++) {
+                ranges[i] = [total, (total += ranges[i])];
+              }
+              var randomNumber = parseInt(Math.random() * total);
+              for (; randomNumber < ranges[--i][0]; );
+              return items[i];
+            }
 
-    for(var i = 0, len = weights.length; i < len; i++) {
-        ranges[i] = [total, total += ranges[i]];
-    }
-    var randomNumber = parseInt(Math.random() * total);
-    for(;randomNumber < ranges[--i][0];);
-    return items[i];
-}
+            var account_id = pickUsingWeights(accounts, weight);
 
-var account_id = pickUsingWeights(accounts, weight);
+               age: function() {
+                return getAge(this.birthDate),
+              },
+      */
+            //let accString = account_id.replace(/\s/g, "");
+            
+            let randNum = Math.random() * 100;
+            let visitor = setVisitor();
+            let id;
+            let age;
+            let birdDate;
+            let email;
+            let full_name;
+            let gender;
+            let homeTown;
+            let jobTitle;
+            let role;
+            let tags;
+            let groupId;
 
-let accString = account_id.replace(/\s/g, '');
-let randNum = Math.random() * 100;
-let visitor;
-let role;
+            function getAge(dateString) {
+              var today = new Date();
+              var birthDate = new Date(dateString);
+              var age = today.getFullYear() - birthDate.getFullYear();
+              var m = today.getMonth() - birthDate.getMonth();
+              if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+              }
+              return age;
+            }
 
-function getAge(dateString) {
-    var today = new Date();
-    var birthDate = new Date(dateString);
-    var age = today.getFullYear() - birthDate.getFullYear();
-    var m = today.getMonth() - birthDate.getMonth();
-    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-        age--;
-    }
-    return age;
-}
+            // 1) Initech - Peter Gibbons, Milton Waddams, Bill Lumbergh, Michael Bolton, Samir Nagheenanajar
+            var visitors = [
+            {
+              id: "001",
+              age: getAge(this.birthDate),
+              birthDate: new Date("1967-06-05").toISOString(),
+              email: "Pete@" + "Initech" + ".com",
+              full_name: "Peter" + " Gibbons",
+              gender: "male",
+              homeTown: "Cedar Rapids" + ", Iowa",
+              jobTitle: "Programmer",
+              role: "user",
+              tags: [
+                { age: ["age"] },
+                { birthDate: ["birthDate"] },
+                { email: ["email"] },
+                { gender: ["gender"] },
+                { homeTown: ["homeTown"] },
+                { jobTitle: ["jobTitle"] },
+                { role: ["role"] }
+              ],
+              groupId: "1001"
+            }
+            ,
+            {
+              id: "002",
+              age: getAge(this.birthDate),
+              birthDate: new Date("1967-02-20").toISOString(),
+               email: "Mike@" + "Initech" + ".com",
+               full_name: "Michael" + " Bolton",
+               gender: "male",
+               homeTown: "New York" + ", New York",
+               jobTitle: "Programmer",
+               role: "user",
+               tags: [
+                { age: ["age"] },
+                { birthDate: ["birthDate"] },
+                { email: ["email"] },
+                { gender: ["gender"] },
+                { homeTown: ["homeTown"] },
+                { jobTitle: ["jobTitle"] },
+                { role: ["role"] }
+              ],
+               groupId: "1001"
+            }
+            ,
+            {
+              id: "003",
+              age: getAge(this.birthDate),
+              birthDate: new Date("1951-11-17").toISOString(),
+              email: "Milt@" + "Initech" + ".com",
+              full_name: "Milton" + " Waddams",
+              gender: "male",
+              homeTown: "Sarasota" + ", Florida",
+              jobTitle: "Collator",
+              role: "read-only",
+              tags: [
+                { age: ["age"] },
+                { birthDate: ["birthDate"] },
+                { email: ["email"] },
+                { gender: ["gender"] },
+                { homeTown: ["homeTown"] },
+                { jobTitle: ["jobTitle"] },
+                { role: ["role"] }
+              ],
+              groupId: "1001"
+            }
+            , 
+            {
+              id: "004",
+              age: getAge(this.birthDate),
+              birthDate: new Date("1972-02-12").toISOString(),
+              email: "Sami@" + "Initech" + ".com",
+              full_name: "Samir" + " Nagheenanajar",
+              gender: "male",
+              homeTown: "Evanston" + ", Illinois",
+              jobTitle: "Programmer",
+              role: "super",
+              tags: [
+                { age: ["age"] },
+                { birthDate: ["birthDate"] },
+                { email: ["email"] },
+                { gender: ["gender"] },
+                { homeTown: ["homeTown"] },
+                { jobTitle: ["jobTitle"] },
+                { role: ["role"] }
+              ],
+              groupId: "1001"
+            }
+            ,
+            {
+              id: "005",
+              age: getAge(this.birthDate),
+              birthDate: new Date("1956-09-20").toISOString(),
+              email: "Bill@" + "Initech" + ".com",
+              full_name: "William" + " Lumbergh",
+              gender: "male",
+              homeTown: "Park Ridge" + ", Illinois",
+              jobTitle: "Vice President + Micromanager",
+              role: "admin",
+              tags: [
+                { age: ["age"] },
+                { birthDate: ["birthDate"] },
+                { email: ["email"] },
+                { gender: ["gender"] },
+                { homeTown: ["homeTown"] },
+                { jobTitle: ["jobTitle"] },
+                { role: ["role"] }
+              ],
+              groupId: "1001"
+            }
+            ,
 
-if (randNum < 10) {   
-    visitor = 001;
-    age = function(){
-        return getAge(this.birthDate)};
-    birthDate = "1955-01-17";
-    email =  'Gus@' + accString + '.com';
-    full_name = 'Augustus' + ' Gloop';
-    gender = 'male';
-    homeTown = 'Dusseldorf' + ', Germany';
-    jobTitle = "Butcher's son";
-    role = 'user';
-    groupId = accountParam || account_id}
+            // 2) Dunder Mifflin - Pam Beesly, Michael Scott, Dwight Shrute, Darryl Philbin, Phyllis Vance
+            ,
+            {
+              id: "006",
+              age: getAge(this.birthDate),
+              birthDate: new Date("1974-04-07").toISOString(),
+              email: "Pam@" + "DunderMifflin" + ".com",
+              full_name: "Pamela" + " Beesly",
+              gender: "female",
+              homeTown: "Fort Wayne" + ", Indiana",
+              jobTitle: "Receptionist",
+              role: "admin",
+              tags: [
+                { age: ["age"] },
+                { birthDate: ["birthDate"] },
+                { email: ["email"] },
+                { gender: ["gender"] },
+                { homeTown: ["homeTown"] },
+                { jobTitle: ["jobTitle"] },
+                { role: ["role"] }
+              ],
+              groupId: "1002"
+            }
+            ,
+            {
+              id: "007",
+              age: getAge(this.birthDate),
+              birthDate: new Date("1962-08-16").toISOString(),
+              email: "Michael@" + "DunderMifflin" + ".com",
+              full_name: "Michael" + " Scott",
+              gender: "male",
+              homeTown: "Concord" + ", Massachusetts",
+              jobTitle: "Regional Manager",
+              role: "super",
+              tags: [
+                { age: ["age"] },
+                { birthDate: ["birthDate"] },
+                { email: ["email"] },
+                { gender: ["gender"] },
+                { homeTown: ["homeTown"] },
+                { jobTitle: ["jobTitle"] },
+                { role: ["role"] }
+              ],
+              groupId: "1002"
+            }
+            ,
+            {
+              id: "008",
+              age: getAge(this.birthDate),
+              birthDate: new Date("1971-10-25").toISOString(),
+              email: "Darryl@" + "DunderMifflin" + ".com",
+              full_name: "Darryl" + " Philbin",
+              gender: "male",
+              homeTown: "Chicago" + ", Illinois",
+              jobTitle: "Foreman",
+              role: "user",
+              tags: [
+                { age: ["age"] },
+                { birthDate: ["birthDate"] },
+                { email: ["email"] },
+                { gender: ["gender"] },
+                { homeTown: ["homeTown"] },
+                { jobTitle: ["jobTitle"] },
+                { role: ["role"] }
+              ],
+              groupId: "1002"
+            }
+            ,
+            {
+              id: "009",
+              age: getAge(this.birthDate),
+              birthDate: new Date("1966-01-20").toISOString(),
+              email: "Dwight@" + "DunderMifflin" + ".com",
+              full_name: "Dwight" + " Kurt" + " Schrute" + " III",
+              gender: "male",
+              homeTown: "Seattle" + ", Washington",
+              jobTitle: "Assistant to the Regional Manager",
+              role: "read-only",
+              tags: [
+                { age: ["age"] },
+                { birthDate: ["birthDate"] },
+                { email: ["email"] },
+                { gender: ["gender"] },
+                { homeTown: ["homeTown"] },
+                { jobTitle: ["jobTitle"] },
+                { role: ["role"] }
+              ],
+              groupId: "1002"
+            }
+            ,
+            {
+              id: "010",
+              age: getAge(this.birthDate),
+              birthDate: new Date("1949-08-15").toISOString(),
+              email: "Phyllis@" + "DunderMifflin" + ".com",
+              full_name: "Phyllis" + " Vance",
+              gender: "female",
+              homeTown: "St. Louis" + ", Missouri",
+              jobTitle: "Sales Representative",
+              role: "user",
+              tags: [
+                { age: ["age"] },
+                { birthDate: ["birthDate"] },
+                { email: ["email"] },
+                { gender: ["gender"] },
+                { homeTown: ["homeTown"] },
+                { jobTitle: ["jobTitle"] },
+                { role: ["role"] }
+              ],
+              groupId: "1002"
+            }
+            ,
+            // 3) InGen - John Hammond, John "Ray" Arnold (chief engineer), Dennis Nedry (computer brogrammer), Ellie Sattler (paleobotanist), Dr. Alan Grant
+            {
+              id: "011",
+              age: getAge(this.birthDate),
+              birthDate: new Date("1923-08-29").toISOString(),
+              email: "John@" + "InGen" + ".com",
+              full_name: "John" + " Hammond",
+              gender: "male",
+              homeTown: "Cambridge" + ", England",
+              jobTitle: "Chief Executive Officer",
+              role: "super",
+              tags: [
+                { age: ["age"] },
+                { birthDate: ["birthDate"] },
+                { email: ["email"] },
+                { gender: ["gender"] },
+                { homeTown: ["homeTown"] },
+                { jobTitle: ["jobTitle"] },
+                { role: ["role"] }
+              ],
+              groupId: "1003"
+            }
+            ,
+            {
+              id: "012",
+              age: getAge(this.birthDate),
+              birthDate: new Date("1948-12-21").toISOString(),
+              email: "Ray@" + "InGen" + ".com",
+              full_name: "Ray" + " Arnold",
+              gender: "male",
+              homeTown: "Washington" + ", D.C.",
+              jobTitle: "Chief Engineer",
+              role: "admin",
+              tags: [
+                { age: ["age"] },
+                { birthDate: ["birthDate"] },
+                { email: ["email"] },
+                { gender: ["gender"] },
+                { homeTown: ["homeTown"] },
+                { jobTitle: ["jobTitle"] },
+                { role: ["role"] }
+              ],
+              groupId: "1003"
+            }
+            ,
+            {
+              id: "013",
+              age: getAge(this.birthDate),
+              birthDate: new Date("1955-08-07").toISOString(),
+              email: "Dennis@" + "InGen" + ".com",
+              full_name: "Dennis" + " Nedry",
+              gender: "male",
+              homeTown: "New York" + ", New York",
+              jobTitle: "Programmer",
+              role: "read-only",
+              tags: [
+                { age: ["age"] },
+                { birthDate: ["birthDate"] },
+                { email: ["email"] },
+                { gender: ["gender"] },
+                { homeTown: ["homeTown"] },
+                { jobTitle: ["jobTitle"] },
+                { role: ["role"] }
+              ],
+              groupId: "1003"
+            }
+            ,
+            {
+              id: "014",
+              age: getAge(this.birthDate),
+              birthDate: new Date("1955-08-07").toISOString(),
+              email: "Al@" + "InGen" + ".com",
+              full_name: "Alan" + " Grant",
+              gender: "male",
+              homeTown: "Queenstown" + ", New Zealand",
+              jobTitle: "Paleontologist",
+              role: "user",
+              tags: [
+                { age: ["age"] },
+                { birthDate: ["birthDate"] },
+                { email: ["email"] },
+                { gender: ["gender"] },
+                { homeTown: ["homeTown"] },
+                { jobTitle: ["jobTitle"] },
+                { role: ["role"] }
+              ],
+              groupId: "1003"
+            }
+            ,
+            {
+              id: "015",
+              age: getAge(this.birthDate),
+              birthDate: new Date("1967-02-10").toISOString(),
+              email: "Ellie@" + "InGen" + ".com",
+              full_name: "Dr." + " Ellen" + " Sattler",
+              gender: "female",
+              homeTown: "Los Angeles" + ", California",
+              jobTitle: "Paleobotanist",
+              role: "admin",
+              tags: [
+                { age: ["age"] },
+                { birthDate: ["birthDate"] },
+                { email: ["email"] },
+                { gender: ["gender"] },
+                { homeTown: ["homeTown"] },
+                { jobTitle: ["jobTitle"] },
+                { role: ["role"] }
+              ],
+              groupId: "1003"
+            }
+            ,
+            // 4) Ghost Busters-Peter Venkman, Raymond Stantz, Egon Spengler, Winston Zeddemore, Janine Melnitz (secretary)
+            {
+              id: "016",
+              age: getAge(this.birthDate),
+              birthDate: new Date("1950-09-21").toISOString(),
+              email: "Pete@" + "GhostBusters" + ".com",
+              full_name: "Dr." + " Peter" + " Venkman",
+              gender: "male",
+              homeTown: "Chicago" + ", Illinois",
+              jobTitle: "Psychologist," + " Ghostbuster",
+              role: "admin",
+              tags: [
+                { age: ["age"] },
+                { birthDate: ["birthDate"] },
+                { email: ["email"] },
+                { gender: ["gender"] },
+                { homeTown: ["homeTown"] },
+                { jobTitle: ["jobTitle"] },
+                { role: ["role"] }
+              ],
+              groupId: "1004"
+            }
+            ,
+            {
+              id: "017",
+              age: getAge(this.birthDate),
+              birthDate: new Date("1952-07-01").toISOString(),
+              email: "Ray@" + "GhostBusters" + ".com",
+              full_name: "Dr." + " Raymond" + " Stantz",
+              gender: "male",
+              homeTown: "Ottawa" + ", Canada",
+              jobTitle: "Psychologist," + " Ghostbuster",
+              role: "user",
+              tags: [
+                { age: ["age"] },
+                { birthDate: ["birthDate"] },
+                { email: ["email"] },
+                { gender: ["gender"] },
+                { homeTown: ["homeTown"] },
+                { jobTitle: ["jobTitle"] },
+                { role: ["role"] }
+              ],
+              groupId: "1004"
+            }
+            ,
+            {
+              id: "018",
+              age: getAge(this.birthDate),
+              birthDate: new Date("1944-11-21").toISOString(),
+              email: "Egon@" + "GhostBusters" + ".com",
+              full_name: "Dr." + " Egon" + " Spengler",
+              gender: "male",
+              homeTown: "Chicago" + ", Illinois",
+              jobTitle: "Psychologist" + ", Ghostbuster",
+              role: "super",
+              tags: [
+                { age: ["age"] },
+                { birthDate: ["birthDate"] },
+                { email: ["email"] },
+                { gender: ["gender"] },
+                { homeTown: ["homeTown"] },
+                { jobTitle: ["jobTitle"] },
+                { role: ["role"] }
+              ],
+              groupId: "1004"
+            }
+            ,
+            {
+              id: "019",
+              age: getAge(this.birthDate),
+              birthDate: new Date("1945-12-17").toISOString(),
+              email: "Ernie@" + "GhostBusters" + ".com",
+              full_name: "Ernest" + " Hudson",
+              gender: "male",
+              homeTown: "Benton Harbor" + ", Michigan",
+              jobTitle: "Ghostbuster",
+              role: "read-only",
+              tags: [
+                { age: ["age"] },
+                { birthDate: ["birthDate"] },
+                { email: ["email"] },
+                { gender: ["gender"] },
+                { homeTown: ["homeTown"] },
+                { jobTitle: ["jobTitle"] },
+                { role: ["role"] }
+              ],
+              groupId: "1004"
+            }
+            ,
+            {
+              id: "020",
+              age: getAge(this.birthDate),
+              birthDate: new Date("1952-10-28").toISOString(),
+              email: "Jane@" + "GhostBusters" + ".com",
+              full_name: "Janine" + " Melnitz",
+              gender: "female",
+              homeTown: "Nashville" + ", Tennessee",
+              jobTitle: "Secretary",
+              role: "admin",
+              tags: [
+                { age: ["age"] },
+                { birthDate: ["birthDate"] },
+                { email: ["email"] },
+                { gender: ["gender"] },
+                { homeTown: ["homeTown"] },
+                { jobTitle: ["jobTitle"] },
+                { role: ["role"] }
+              ],
+              groupId: "1004"
+            }
+            ,
+            // 5) GenCo Olive Oil Company- Vito Correleone, Peter Clemenza, Salvatore Tessio, Genco Abbandando (consigliere),
+            {
+              id: "021",
+              age: getAge(this.birthDate),
+              birthDate: new Date("1924-04-03").toISOString(),
+              email: "Vito@" + "Genco" + ".com",
+              full_name: "Vito" + " Correleone",
+              gender: "male",
+              homeTown: "Omaha" + ", Nebraska",
+              jobTitle: "Don",
+              role: "super",
+              tags: [
+                { age: ["age"] },
+                { birthDate: ["birthDate"] },
+                { email: ["email"] },
+                { gender: ["gender"] },
+                { homeTown: ["homeTown"] },
+                { jobTitle: ["jobTitle"] },
+                { role: ["role"] }
+              ],
+              groupId: "1005"
+            }
+            ,
+            {
+              id: "022",
+              age: getAge(this.birthDate),
+              birthDate: new Date("1933-09-04").toISOString(),
+              email: "Pete@" + "Genco" + ".com",
+              full_name: "Peter" + " Clemenza",
+              gender: "male",
+              homeTown: "The Bronx" + ", New York",
+              jobTitle: "Consigliere",
+              role: "admin",
+              tags: [
+                { age: ["age"] },
+                { birthDate: ["birthDate"] },
+                { email: ["email"] },
+                { gender: ["gender"] },
+                { homeTown: ["homeTown"] },
+                { jobTitle: ["jobTitle"] },
+                { role: ["role"] }
+              ],
+              groupId: "1005"
+            }
+            ,
+            {
+              id: "023",
+              age: getAge(this.birthDate),
+              birthDate: new Date("1924-04-03").toISOString(),
+              email: "Sal@" + "Genco" + ".com",
+              full_name: "Salvatore" + " Tessio",
+              gender: "male",
+              homeTown: "Brooklyn" + ", New York",
+              jobTitle: "Capo",
+              role: "super",
+              tags: [
+                { age: ["age"] },
+                { birthDate: ["birthDate"] },
+                { email: ["email"] },
+                { gender: ["gender"] },
+                { homeTown: ["homeTown"] },
+                { jobTitle: ["jobTitle"] },
+                { role: ["role"] }
+              ],
+              groupId: "1005"
+            }
+            ,
+            { id: "024",
+              age: getAge(this.birthDate),
+              birthDate: new Date("1935-08-012").toISOString(),
+              email: "Fredo@" + "Genco" + ".com",
+              full_name: "Frederico" + " Correleone",
+              gender: "male",
+              homeTown: "Revere" + ", Massachusetts",
+              jobTitle: "Soldier",
+              role: "user",
+              tags: [
+                { age: ["age"] },
+                { birthDate: ["birthDate"] },
+                { email: ["email"] },
+                { gender: ["gender"] },
+                { homeTown: ["homeTown"] },
+                { jobTitle: ["jobTitle"] },
+                { role: ["role"] }
+              ],
+              groupId: "1005",
+            }
+            ,
+            {
+              id: "025",
+              age: getAge(this.birthDate),
+              birthDate: new Date("1926-03-13").toISOString(),
+              email: "Luke@" + "Genco" + ".com",
+              full_name: "Luca" + " Brasi",
+              gender: "male",
+              homeTown: "Brooklyn" + ", New York",
+              jobTitle: "Enforcer",
+              role: "read-only",
+              tags: [
+                { age: ["age"] },
+                { birthDate: ["birthDate"] },
+                { email: ["email"] },
+                { gender: ["gender"] },
+                { homeTown: ["homeTown"] },
+                { jobTitle: ["jobTitle"] },
+                { role: ["role"] }
+              ],
+              groupId: "1005"
+            }
+            ];
 
-else if (randNum <= 20) {
-    visitor = 002;
-    age = function(){
-        return getAge(this.birthDate)};
-    birthDate = "1932-11-07";
-    email =  'Bernie@' + accString + '.com';
-    full_name = 'Bernard' + ' Marx'
-    gender = 'male';
-    homeTown = 'London' + ', World State';
-    jobTitle = 'Conditioning Coach';
-    role = 'super user';
-    groupId = accountParam || account_id} 
+            var accounts = [
+              {
+                groupId: "1001",
+                traits: {
+                  name: "Initech",
+                  industry: "Financial Technology",
+                  csmAssigned: "James W.",
+                  employees: 1502,
+                  location: "Austin, TX",
+                  plan: "Enterprise",
+                  contractStart: new Date("1999-02-19").toISOString(),
+                  contractEnd: new Date("2021-02-18").toISOString(),
+                  contractValue: 100000,
+                  monthly_value: this.contractValue / 12,
+                  tags: [
+                    { industry: ["industry"] },
+                    { csmAssigned: ["csmAssigned"] },
+                    { employees: ["employees"] },
+                    { plan: ["plan"] },
+                    { contractStart: ["contractStart"] },
+                    { contractEnd: ["contractEnd"] },
+                    { contractValue: ["contractValue"] }
+                  ]
+                }
+              },
+          {
+          groupId: "1002",
+          traits: {
+          name: "Dunder Mifflin Paper Company, Inc.",
+          industry: "Paper Supply",
+          csmAssigned: "Beth G.",
+          employees: 22,
+          location: "Scranton, PA",
+          plan: "Corporate",
+          contractStart: new Date ("2005-03-24").toISOString(),
+          contractEnd: new Date ("2021-03-23").toISOString(),
+          contractValue: 25000,
+          monthly_value: this.contractValue/12,
+          tags: [{industry:['industry']},{csmAssigned:['csmAssigned']},{employees:['employees']},{plan:['plan']},{contractStart:['contractStart']},{contractEnd:['contractEnd']},{contractValue:['contractValue']}]
+          }
+      }
+      ,
+          {
+          groupId: "1003",
+          traits: {
+          name: 'InGen',
+          industry: 'Genetic Engineering',
+          csmAssigned: 'Erin W.',
+          employees: 6117,
+          location: 'Isla Nublar, Costa Rica',
+          plan: 'Strategic',
+          contractStart: new Date ("1993-06-11").toISOString(),
+          contractEnd: new Date ("2021-06-10").toISOString(),
+          contractValue: 350000,
+          monthly_value: this.contractValue/12,
+          tags: [{industry:['industry']},{csmAssigned:['csmAssigned']},{employees:['employees']},{plan:['plan']},{contractStart:['contractStart']},{contractEnd:['contractEnd']},{contractValue:['contractValue']}]
+          }
+        }
+      ,
+          {groupId:"1004",
+          traits: {
+          name: "Ghost Busters",
+          industry: "Paranormal Research",
+          csmAssigned: "Erica A.",
+          employees: 6,
+          location: 'New York, NY',
+          plan: "Self-Service",
+          contractStart: new Date ("1984-06-07").toISOString(),
+          contractEnd: new Date ("2021-06-06").toISOString(),
+          contractValue: 12000,
+          monthly_value: this.contractValue/12,
+          tags: [{industry:['industry']},{csmAssigned:['csmAssigned']},{employees:['employees']},{plan:['plan']},{contractStart:['contractStart']},{contractEnd:['contractEnd']},{contractValue:['contractValue']}]
+          }
+      }
+      ,
+          {
+          groupId: "1005",
+          traits: {
+          name: "Genco Olive Oil Company",
+          industry: "Agricultural Shipping and Distribution",
+          csmAssigned: "Ryan W.",
+          employees: 89,
+          location: "New York, NY",
+          plan: "Mid-Market",
+          contractStart: new Date ("1922-03-21").toISOString(),
+          contractEnd: new Date ("2021-03-20").toISOString(),
+          contractValue: 100000,
+          monthly_value: this.contractValue/12,
+          tags: [{industry:['industry']},{csmAssigned:['csmAssigned']},{employees:['employees']},{plan:['plan']},{contractStart:['contractStart']},{contractEnd:['contractEnd']},{contractValue:['contractValue']}]
+          }
+          }
+      ]
 
-else if (randNum <= 30) {
-    visitor = 003;
-    age = function(){
-        return getAge(this.birthDate)};
-    birthDate = "1947-12-25";
-    email =  'Cindy@' + accString + '.com';
-    full_name = 'Cinderella' + ' Lou Whoo';
-    gender = 'female';
-    homeTown = 'Whoville' + ', Specktonia';
-    jobTitle = 'Youth Organizer';
-    role = 'read-only',
-    groupId = accountParam || account_id}
- 
-else if (randNum <= 40) {
-    visitor = 004;
-    age = function(){
-        return getAge(this.birthDate)};
-    birthDate = "1899-05-29";
-    email =    'Daisy@' + accString + '.com';
-    full_name = 'Daisy' + ' Fay' + ' Buchanan';
-    gender = 'female';
-    homeTown = 'Louisville' + ', Kentucky';
-    jobTitle = 'Socialite';
-    role = 'user';
-    groupId = accountParam || account_id} 
-    
-else if (randNum <= 50) {
-    visitor = 005;
-    age = function(){
-        return getAge(this.birthDate)};
-    birthDate = "1932-10-16";
-    email =    'Daisy@' + accString + '.com';
-    full_name = 'Lucy' + ' Pevensie';
-    gender = 'female';
-    homeTown = 'London' + ', England';
-    jobTitle = 'Queen of Narnia';
-    role = 'admin',
-    groupId = accountParam || account_id} 
+            var visitorsAccount = accounts.filter(function(account) {
+              return accounts.groupId === visitors.groupId;
+            });
 
-else if (randNum <= 60) {
-    visitor = 006;
-    age = function(){
-        return getAge(this.birthDate)},
-    birthDate = "1989-01-14";
-    email = 'Maggie@' + accString + '.com';
-    full_name = 'Margaret' + ' Simpson' + ' Jr.';
-    gender = 'female';
-    homeTown = 'Springfield' + ', Oregon';
-    jobTitle = 'Punk Rock Band Vocalist';
-    role = 'read-only';
-    groupId = accountParam || account_id} 
-    
-else if (randNum <= 70) {
-    visitor = 007;
-    age = function(){
-        return getAge(this.birthDate)
-    },
-    birthDate = "-1197-04-16";
-    email = 'Penny@' + accString + '.com';
-    full_name = 'Penelope' + ' of Ithaca';
-    gender = 'female';
-    homeTown = 'Ithaca' + ', Greece';
-    jobTitle = 'Queen of Ithaca/Weaver';
-    role = 'admin';
-    groupId = accountParam || account_id}
-     
-else if (randNum <= 80) {
-    visitor = 008;
-    age = function(){
-        return getAge(this.birthDate)
-    },
-    birthDate = "1948-12-04";
-    email = 'Ozzy@' + accString + '.com';
-    full_name = 'Oswald' + ' Osbourne';
-    gender = 'male';
-    homeTown = 'Birmingham' + ', England';
-    jobTitle = 'Lead Singer';
-    role = 'read-only';
-    groupId = accountParam || account_id}
+            if (visitorsAccount.length) {
+              var account = visitorsAccount[0];
+            }
+  
+      !(function() {
+        var analytics = (window.analytics = window.analytics || []);
+        if (!analytics.initialize)
+          if (analytics.invoked)
+            window.console &&
+              console.error &&
+              console.error("Segment snippet included twice.");
+          else {
+            analytics.invoked = !0;
+            analytics.methods = [
+              "trackSubmit",
+              "trackClick",
+              "trackLink",
+              "trackForm",
+              "pageview",
+              "identify",
+              "reset",
+              "group",
+              "track",
+              "ready",
+              "alias",
+              "debug",
+              "page",
+              "once",
+              "off",
+              "on"
+            ];
+            analytics.factory = function(t) {
+              return function() {
+                var e = Array.prototype.slice.call(arguments);
+                e.unshift(t);
+                analytics.push(e);
+                return analytics;
+              };
+            };
+            for (var t = 0; t < analytics.methods.length; t++) {
+              var e = analytics.methods[t];
+              analytics[e] = analytics.factory(e);
+            }
+            analytics.load = function(t, e) {
+              var n = document.createElement("script");
+              n.type = "text/javascript";
+              n.async = !0;
+              n.src =
+                "https://cdn.segment.com/analytics.js/v1/" +
+                t +
+                "/analytics.min.js";
+              var a = document.getElementsByTagName("script")[0];
+              a.parentNode.insertBefore(n, a);
+              analytics._loadOptions = e;
+            };
+            analytics.SNIPPET_VERSION = "4.1.0";
+            analytics.load("6IdsvOTfgQp8iw9BWtfZxf4ZLLvU4lCJ");
+            analytics.page();
+          }
+      })();
 
-else if (randNum <= 90) {
-    visitor = 
-    age = function(){
-        return getAge(this.birthDate)
-    };
-    birthDate = "1915-07-29";
-    email = 'Sam@' + accString + '.com';
-    full_name = 'Samwise' + ' Gamgee';
-    gender = 'male';
-    homeTown = 'Hobbiton' + ', The Shire';
-    jobTitle = 'Gardener';
-    role = 'user';
-    groupId = accountParam || account_id}
+      function setVisitor(randomNumber) {
+        switch (randomNumber) {
+          case randomNumber <= 4:
+            getVisitor("001");
+            break;
+          case randomNumber <= 8:
+            getVisitor("002");
+            break;
+          case randomNumber <= 12:
+            getVisitor("003");
+            break;
+            case randomNumber <= 16:
+            getVisitor("004");
+            break;
+            case randomNumber <= 20:
+            getVisitor("005");
+            break;
+            case randomNumber <= 24:
+            getVisitor("006");
+            break;
+            case randomNumber <= 28:
+            getVisitor("007");
+            break;
+            case randomNumber <= 32:
+            getVisitor("008");
+            break;
+            case randomNumber <= 36:
+            getVisitor("009");
+            break;
+            case randomNumber <= 40:
+            getVisitor("010");
+            break;
+            case randomNumber <= 44:
+            getVisitor("011");
+            break;
+            case randomNumber <= 48:
+            getVisitor("012");
+            break;
+            case randomNumber <= 52:
+            getVisitor("013");
+            break;
+            case randomNumber <= 56:
+            getVisitor("014");
+            break;
+            case randomNumber <= 60:
+            getVisitor("015");
+            break;
+            case randomNumber <= 64:
+            getVisitor("016");
+            break;
+            case randomNumber <= 68:
+            getVisitor("017");
+            break;
+            case randomNumber <= 72:
+            getVisitor("018");
+            break;
+            case randomNumber <= 76:
+            getVisitor("019");
+            break;
+            case randomNumber <= 80:
+            getVisitor("020");
+            break;
+            case randomNumber <= 84:
+            getVisitor("021");
+            break;
+            case randomNumber <= 88:
+            getVisitor("022");
+            break;
+            case randomNumber <= 92:
+            getVisitor("023");
+            break;
+            case randomNumber <= 96:
+            getVisitor("024");
+            break;
+            case randomNumber <= 100:
+            getVisitor("025");
+            break;
+        }
+      }
 
-else {
-    visitor = 010,
-    age = function(){
-        return getAge(this.birthDate)},
-    birthDate = "1945-07-09";
-    email = 'Wes@' + accString + '.com';
-    full_name = 'Wesley' + ' Mantooth'
-    gender = 'male';
-    homeTown = 'San Diego' + ', California'
-    jobTitle = 'Anchorman';
-    role = 'admin',
-    groupId = accountParam || account_id}</script><script>!function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src="https://cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
-    analytics.load("6IdsvOTfgQp8iw9BWtfZxf4ZLLvU4lCJ");
-    analytics.page();
-    }}();
+      function getVisitor(id) {
+        return visitors.filter(function(visitor) {
+          return visitor.id === id;
+        });
+      }
 
-    analytics.identify(visitor, {
-    age,
-    birthDate,
-    email,
-    full_name,
-    gender,
-    homeTown,
-    jobTitle,
-    role,
-    groupId: accountParam || account_id
-});
-    analytics.group(accountParam || account_id, {
-    name: accountParam || account_id, 
-    industry: "Technology",
-    employees: 329, 
-    plan: "Enterprise", 
-    contractStart: 2017-03-21,
-    contractEnd: 2020-04-20,
-    contractValue: "$100,000"
-});
+      if (visitors.length) {
+        analytics.identify(visitors.id, {
+          age: visitors.age,
+          birthDate: visitors.birthDate,
+          email: visitors.email,
+          full_name: visitors.full_name,
+          gender: visitors.gender,
+          homeTown: visitors.homeTown,
+          jobTitle: visitors.jobTitle,
+          role: visitors.role,
+          tags: visitors.tags,
+          groupId: visitors.groupId
+        });
+      }
 
-analytics.track("Registered", {
-  plan: "Pro Annual", 
-  accountType: "Facebook"
-});</script><title>Pendo Experience</title><link href="/Segment_Test_Site/static/css/main.7c93a296.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div><script type="text/javascript" src="/Segment_Test_Site/static/js/main.b390bd0b.js"></script></body></html>
+      if (account.length) {
+        analytics.group(visitor.groupId, {
+          name: account.traits.name,
+          industry: account.traits.industry,
+          employees: account.traits.employees,
+          plan: account.traits.plan,
+          contractStart: account.traits.contractStart,
+          contractEnd: account.traits.contractEnd,
+          contractValue: account.traits.contractValue
+        });
+      }
+
+      analytics.track("Registered", {
+        plan: "Pro Annual",
+        accountType: "Facebook"
+      });</script><title>Pendo Experience</title><link href="/Segment_Test_Site/static/css/main.7c93a296.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div><script type="text/javascript" src="/Segment_Test_Site/static/js/main.b390bd0b.js"></script></body></html>
