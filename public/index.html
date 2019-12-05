@@ -815,7 +815,7 @@
       })();
 
       function getVisitor(id) {
-        var result = visitors.filter(function(visitor) {
+        var result = visitors.find(function(visitor) {
           return visitor.id === id;
         });
         return result;
