@@ -713,6 +713,11 @@
 
       let randNum = Math.ceil(Math.random() * 25);
       let visitor = getVisitor(randNum);
+      if (visitor.length) {
+        visitor = visitor[0];
+      } else {
+        visitor = "VISITOR-UNIQUE-ID"
+      };
       let id;
       let age;
       let birdDate;
@@ -795,13 +800,14 @@
       })();
 
       function getVisitor(id) {
-        var result = visitors.find(function(visitor) {
+        return visitors.filter(function(visitor) {
           return visitor.id === id;
         });
-        return result;
       }
 
-      if (visitor.length) {
+      if (visitor === "VISITOR-UNIQUE-ID") {
+        analytics.identify(visitor);
+      } else {
         analytics.identify(visitor.id, {
           age: visitor.age,
           birthDate: visitor.birthDate,
