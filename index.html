@@ -800,18 +800,18 @@
         });
       }
 
-      if (visitors.length) {
-        analytics.identify(visitors.id, {
-          age: visitors.age,
-          birthDate: visitors.birthDate,
-          email: visitors.email,
-          full_name: visitors.full_name,
-          gender: visitors.gender,
-          homeTown: visitors.homeTown,
-          jobTitle: visitors.jobTitle,
-          role: visitors.role,
-          tags: visitors.tags,
-          groupId: visitors.groupId
+      if (visitor.length) {
+        analytics.identify(visitor.id, {
+          age: visitor.age,
+          birthDate: visitor.birthDate,
+          email: visitor.email,
+          full_name: visitor.full_name,
+          gender: visitor.gender,
+          homeTown: visitor.homeTown,
+          jobTitle: visitor.jobTitle,
+          role: visitor.role,
+          tags: visitor.tags,
+          groupId: visitor.groupId
         });
       }
 
