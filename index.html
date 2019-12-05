@@ -795,9 +795,10 @@
       })();
 
       function getVisitor(id) {
-        return visitors.filter(function(visitor) {
+        var result = visitors.filter(function(visitor) {
           return visitor.id === id;
         });
+        return result;
       }
 
       if (visitor.length) {
