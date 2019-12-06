@@ -703,14 +703,6 @@
         }
       ];
 
-      var visitorsAccount = accounts.filter(function(account) {
-        return account.groupId === visitor.groupId;
-      });
-
-      if (visitorsAccount.length) {
-        var account = visitorsAccount[0];
-      }
-
       let randNum = Math.ceil(Math.random() * 25);
       let visitor = getVisitor(randNum);
       if (visitor.length) {
@@ -718,6 +710,14 @@
       } else {
         visitor = "VISITOR-UNIQUE-ID"
       };
+      var visitorsAccount = accounts.filter(function(account) {
+        return account.groupId === visitor.groupId;
+      });
+
+      if (visitorsAccount.length) {
+        var account = visitorsAccount[0];
+      }
+      
       let id;
       let age;
       let birdDate;
