@@ -59,13 +59,13 @@
           jobTitle: "Programmer",
           role: "user",
           tags: [
-            { age: ["age"] },
-            { birthDate: ["birthDate"] },
-            { email: ["email"] },
-            { gender: ["gender"] },
-            { homeTown: ["homeTown"] },
-            { jobTitle: ["jobTitle"] },
-            { role: ["role"] }
+            { birthDate: [new Date("1967-06-05 01:01:01").toISOString()] },
+            { age: [getAge(new Date("1967-06-05 01:01:01"))] },
+            { email: ["Pete@Initech.com"] },
+            { gender: ["male"] },
+            { homeTown: ["Cedar Rapids, Iowa"] },
+            { jobTitle: ["Programmer"] },
+            { role: ["user"] }
           ],
           groupId: "1001"
         },
@@ -79,14 +79,14 @@
           homeTown: "New York" + ", New York",
           jobTitle: "Programmer",
           role: "user",
-          tags: [
-            { age: ["age"] },
-            { birthDate: ["birthDate"] },
-            { email: ["email"] },
-            { gender: ["gender"] },
-            { homeTown: ["homeTown"] },
-            { jobTitle: ["jobTitle"] },
-            { role: ["role"] }
+          tags: [  
+            { birthDate: [new Date("1967-02-02 01:01:01").toISOString()] },
+            { age: [getAge(new Date("1967-02-02 01:01:01"))] },
+            { email: ["Mike@Initech.com"] },
+            { gender: ["male"] },
+            { homeTown: ["New York, New York"] },
+            { jobTitle: ["Programmer"] },
+            { role: ["user"] }
           ],
           groupId: "1001"
         },
@@ -101,13 +101,13 @@
           jobTitle: "Collator",
           role: "read-only",
           tags: [
-            { age: ["age"] },
-            { birthDate: ["birthDate"] },
-            { email: ["email"] },
-            { gender: ["gender"] },
-            { homeTown: ["homeTown"] },
-            { jobTitle: ["jobTitle"] },
-            { role: ["role"] }
+            { birthDate: [new Date("1951-11-17 01:01:01").toISOString()] },  
+            { age: [getAge(new Date("1951-11-17 01:01:01"))] },
+            { email: ["Milt@Initech.com"] },
+            { gender: ["male"] },
+            { homeTown: ["Sarasota, Florida"] },
+            { jobTitle: ["Collator"] },
+            { role: ["read-only"] }
           ],
           groupId: "1001"
         },
@@ -122,13 +122,13 @@
           jobTitle: "Programmer",
           role: "super",
           tags: [
-            { age: ["age"] },
-            { birthDate: ["birthDate"] },
-            { email: ["email"] },
-            { gender: ["gender"] },
-            { homeTown: ["homeTown"] },
-            { jobTitle: ["jobTitle"] },
-            { role: ["role"] }
+            { birthDate: [new Date("1972-02-12 01:01:01").toISOString()] },
+            { age: [getAge(new Date("1972-02-12 01:01:01"))] },
+            { email: ["Sami@Initec.com"] },
+            { gender: ["male"] },
+            { homeTown: ["Evanston" + ", Illinois"] },
+            { jobTitle: ["Programmer"] },
+            { role: ["super"] }
           ],
           groupId: "1001"
         },
@@ -143,13 +143,13 @@
           jobTitle: "Vice President + Micromanager",
           role: "admin",
           tags: [
-            { age: ["age"] },
-            { birthDate: ["birthDate"] },
-            { email: ["email"] },
-            { gender: ["gender"] },
-            { homeTown: ["homeTown"] },
-            { jobTitle: ["jobTitle"] },
-            { role: ["role"] }
+            { birthDate: [new Date("1956-09-20 01:01:01").toISOString()] },
+            { age: [getAge(new Date("1956-09-20 01:01:01"))] },
+            { email: ["Bill@Initech.com"] },
+            { gender: ["male"] },
+            { homeTown: ["homeToPark Ridge" + ", Illinoiswn"] },
+            { jobTitle: ["Vice President + Micromanager"] },
+            { role: ["admin"] }
           ],
           groupId: "1001"
         },
@@ -166,13 +166,13 @@
           jobTitle: "Receptionist",
           role: "admin",
           tags: [
-            { age: ["age"] },
-            { birthDate: ["birthDate"] },
-            { email: ["email"] },
-            { gender: ["gender"] },
-            { homeTown: ["homeTown"] },
-            { jobTitle: ["jobTitle"] },
-            { role: ["role"] }
+            { birthDate: [new Date("1974-04-01 01:01:01").toISOString()] },
+            { age: [getAge(new Date("1974-04-01 01:01:01"))] },
+            { email: ["Pam@DunderMifflin.com"] },
+            { gender: ["female"] },
+            { homeTown: ["Fort Wayne, Indiana"] },
+            { jobTitle: ["Receptionist"] },
+            { role: ["admin"] }
           ],
           groupId: "1002"
         },
@@ -187,13 +187,13 @@
           jobTitle: "Regional Manager",
           role: "super",
           tags: [
-            { age: ["age"] },
-            { birthDate: ["birthDate"] },
-            { email: ["email"] },
-            { gender: ["gender"] },
-            { homeTown: ["homeTown"] },
-            { jobTitle: ["jobTitle"] },
-            { role: ["role"] }
+            { birthDate: [new Date("1962-08-16 01:01:01").toISOString()] },  
+            { age: [getAge(new Date("1962-08-16 01:01:01"))] },
+            { email: ["Michael@DunderMifflin.com"] },
+            { gender: ["male"] },
+            { homeTown: ["Concord, Massachusetts"] },
+            { jobTitle: ["Regional Manager"] },
+            { role: ["super"] }
           ],
           groupId: "1002"
         },
@@ -208,13 +208,13 @@
           jobTitle: "Foreman",
           role: "user",
           tags: [
-            { age: ["age"] },
-            { birthDate: ["birthDate"] },
-            { email: ["email"] },
-            { gender: ["gender"] },
-            { homeTown: ["homeTown"] },
-            { jobTitle: ["jobTitle"] },
-            { role: ["role"] }
+            { birthDate: [new Date("1971-10-25 01:01:01").toISOString()] },
+            { age: [getAge(new Date("1971-10-25 01:01:01"))] },
+            { email: ["Darryl@DunderMifflin.com"] },
+            { gender: ["male"] },
+            { homeTown: ["Chicago, Illinois"] },
+            { jobTitle: ["Foreman"] },
+            { role: ["user"] }
           ],
           groupId: "1002"
         },
@@ -229,13 +229,13 @@
           jobTitle: "Assistant to the Regional Manager",
           role: "read-only",
           tags: [
-            { age: ["age"] },
-            { birthDate: ["birthDate"] },
-            { email: ["email"] },
-            { gender: ["gender"] },
-            { homeTown: ["homeTown"] },
-            { jobTitle: ["jobTitle"] },
-            { role: ["role"] }
+            { birthDate: [new Date("1966-01-20 01:01:01").toISOString()] },
+            { age: [getAge(new Date("1966-01-20 01:01:01"))] },
+            { email: ["Dwight@DunderMifflin.com"] },
+            { gender: ["male"] },
+            { homeTown: ["Seattle, Washington"] },
+            { jobTitle: ["Assistant to the Regional Manager"] },
+            { role: ["read-only"] }
           ],
           groupId: "1002"
         },
@@ -250,13 +250,13 @@
           jobTitle: "Sales Representative",
           role: "user",
           tags: [
-            { age: ["age"] },
-            { birthDate: ["birthDate"] },
-            { email: ["email"] },
-            { gender: ["gender"] },
-            { homeTown: ["homeTown"] },
-            { jobTitle: ["jobTitle"] },
-            { role: ["role"] }
+            { birthDate: [new Date("1949-08-15 01:01:01").toISOString()] },
+            { age: [getAge(new Date("1949-08-15 01:01:01"))] },
+            { email: ["Phyllis@DunderMifflin.com"] },
+            { gender: ["female"] },
+            { homeTown: ["St. Louis, Missouri"] },
+            { jobTitle: ["Sales Representative"] },
+            { role: ["user"] }
           ],
           groupId: "1002"
         },
@@ -272,13 +272,13 @@
           jobTitle: "Chief Executive Officer",
           role: "super",
           tags: [
-            { age: ["age"] },
-            { birthDate: ["birthDate"] },
-            { email: ["email"] },
-            { gender: ["gender"] },
-            { homeTown: ["homeTown"] },
-            { jobTitle: ["jobTitle"] },
-            { role: ["role"] }
+            { birthDate: [new Date("1923-08-29 01:01:01").toISOString()] },
+            { age: [getAge(new Date("1923-08-29 01:01:01"))] },
+            { email: ["John@InGen.com"] },
+            { gender: ["male"] },
+            { homeTown: ["Cambridge, England"] },
+            { jobTitle: ["Chief Executive Officer"] },
+            { role: ["super"] }
           ],
           groupId: "1003"
         },
@@ -293,13 +293,13 @@
           jobTitle: "Chief Engineer",
           role: "admin",
           tags: [
-            { age: ["age"] },
-            { birthDate: ["birthDate"] },
-            { email: ["email"] },
-            { gender: ["gender"] },
-            { homeTown: ["homeTown"] },
-            { jobTitle: ["jobTitle"] },
-            { role: ["role"] }
+            { birthDate: [new Date("1948-12-21 01:01:01").toISOString()] },
+            { age: [getAge(new Date("1948-12-21 01:01:01"))] },
+            { email: ["Ray@InGen.com"] },
+            { gender: ["male"] },
+            { homeTown: ["Washington, D.C.Town"] },
+            { jobTitle: ["Chief Engineer"] },
+            { role: ["admin"] }
           ],
           groupId: "1003"
         },
@@ -314,13 +314,13 @@
           jobTitle: "Programmer",
           role: "read-only",
           tags: [
-            { age: ["age"] },
-            { birthDate: ["birthDate"] },
-            { email: ["email"] },
-            { gender: ["gender"] },
-            { homeTown: ["homeTown"] },
-            { jobTitle: ["jobTitle"] },
-            { role: ["role"] }
+            { birthDate: [new Date("1955-08-07 01:01:01").toISOString()] },
+            { age: [getAge(new Date("1955-08-07 01:01:01"))] },
+            { email: ["Dennis@InGen.com"] },
+            { gender: ["male"] },
+            { homeTown: ["New York, New York"] },
+            { jobTitle: ["Programmer"] },
+            { role: ["read-only"] }
           ],
           groupId: "1003"
         },
@@ -335,13 +335,13 @@
           jobTitle: "Paleontologist",
           role: "user",
           tags: [
-            { age: ["age"] },
-            { birthDate: ["birthDate"] },
-            { email: ["email"] },
-            { gender: ["gender"] },
-            { homeTown: ["homeTown"] },
-            { jobTitle: ["jobTitle"] },
-            { role: ["role"] }
+            { birthDate: [new Date("1955-08-07 01:01:01").toISOString()] },
+            { age: [getAge(new Date("1955-08-07 01:01:01"))] },
+            { email: ["Al@InGen.com"] },
+            { gender: ["male"] },
+            { homeTown: ["homeToQueenstown, New Zealandwn"] },
+            { jobTitle: ["Paleontologist"] },
+            { role: ["user"] }
           ],
           groupId: "1003"
         },
@@ -356,13 +356,13 @@
           jobTitle: "Paleobotanist",
           role: "admin",
           tags: [
-            { age: ["age"] },
-            { birthDate: ["birthDate"] },
-            { email: ["email"] },
-            { gender: ["gender"] },
-            { homeTown: ["homeTown"] },
-            { jobTitle: ["jobTitle"] },
-            { role: ["role"] }
+            { birthDate: [new Date("1967-02-10 01:01:01").toISOString()] },
+            { age: [getAge(new Date("1967-02-10 01:01:01"))] },
+            { email: ["Ellie@InGen.com"] },
+            { gender: ["female"] },
+            { homeTown: ["Los Angeles, California"] },
+            { jobTitle: ["Paleobotanist"] },
+            { role: ["admin"] }
           ],
           groupId: "1003"
         },
@@ -378,13 +378,13 @@
           jobTitle: "Psychologist," + " Ghostbuster",
           role: "admin",
           tags: [
-            { age: ["age"] },
-            { birthDate: ["birthDate"] },
-            { email: ["email"] },
-            { gender: ["gender"] },
-            { homeTown: ["homeTown"] },
-            { jobTitle: ["jobTitle"] },
-            { role: ["role"] }
+            { birthDate: [new Date("1950-09-21 01:01:01").toISOString()] },
+            { age: [getAge(new Date("1950-09-21 01:01:01"))] },
+            { email: ["Pete@GhostBusters.com"] },
+            { gender: ["male"] },
+            { homeTown: ["Chicago, Illinois"] },
+            { jobTitle: ["Psychologist, Ghostbuster"] },
+            { role: ["admin"] }
           ],
           groupId: "1004"
         },
@@ -399,13 +399,13 @@
           jobTitle: "Psychologist," + " Ghostbuster",
           role: "user",
           tags: [
-            { age: ["age"] },
-            { birthDate: ["birthDate"] },
-            { email: ["email"] },
-            { gender: ["gender"] },
-            { homeTown: ["homeTown"] },
-            { jobTitle: ["jobTitle"] },
-            { role: ["role"] }
+            { birthDate: [new Date("1952-09-01 01:01:01").toISOString()] },  
+            { age: [getAge(new Date("1952-09-01 01:01:01"))] },
+            { email: ["Ray@GhostBusters.com"] },
+            { gender: ["male"] },
+            { homeTown: ["Ottawa, Canada"] },
+            { jobTitle: ["Psychologist, Ghostbuster"] },
+            { role: ["user"] }
           ],
           groupId: "1004"
         },
@@ -420,13 +420,13 @@
           jobTitle: "Psychologist" + ", Ghostbuster",
           role: "super",
           tags: [
-            { age: ["age"] },
-            { birthDate: ["birthDate"] },
-            { email: ["email"] },
-            { gender: ["gender"] },
-            { homeTown: ["homeTown"] },
-            { jobTitle: ["jobTitle"] },
-            { role: ["role"] }
+            { birthDate: [new Date("1944-11-21 01:01:01").toISOString()] },
+            { age: [getAge(new Date("1944-11-21 01:01:01"))] },
+            { email: ["Egon@GhostBusters.com"] },
+            { gender: ["male"] },
+            { homeTown: ["Chicago, Illinois"] },
+            { jobTitle: ["Psychologist, Ghostbuster"] },
+            { role: ["super"] }
           ],
           groupId: "1004"
         },
@@ -441,13 +441,13 @@
           jobTitle: "Ghostbuster",
           role: "read-only",
           tags: [
-            { age: ["age"] },
-            { birthDate: ["birthDate"] },
-            { email: ["email"] },
-            { gender: ["gender"] },
-            { homeTown: ["homeTown"] },
-            { jobTitle: ["jobTitle"] },
-            { role: ["role"] }
+            { birthDate: [new Date("1945-12-17 01:01:01").toISOString()] },
+            { age: [getAge(new Date("1945-12-17 01:01:01"))] },
+            { email: ["Ernie@GhostBusters.com"] },
+            { gender: ["male"] },
+            { homeTown: ["Benton Harbor, Michigan"] },
+            { jobTitle: ["Ghostbuster"] },
+            { role: ["super"] }
           ],
           groupId: "1004"
         },
@@ -462,13 +462,13 @@
           jobTitle: "Secretary",
           role: "admin",
           tags: [
-            { age: ["age"] },
-            { birthDate: ["birthDate"] },
-            { email: ["email"] },
-            { gender: ["gender"] },
-            { homeTown: ["homeTown"] },
-            { jobTitle: ["jobTitle"] },
-            { role: ["role"] }
+            { birthDate: [new Date("1952-10-28 01:01:01").toISOString()] },
+            { age: [getAge(new Date("1952-10-28 01:01:01"))] },
+            { email: ["Jane@GhostBusters.com"] },
+            { gender: ["female"] },
+            { homeTown: ["Nashville, Tennessee"] },
+            { jobTitle: ["Secretary"] },
+            { role: ["admin"] }
           ],
           groupId: "1004"
         },
@@ -484,13 +484,13 @@
           jobTitle: "Don",
           role: "super",
           tags: [
-            { age: ["age"] },
-            { birthDate: ["birthDate"] },
-            { email: ["email"] },
-            { gender: ["gender"] },
-            { homeTown: ["homeTown"] },
-            { jobTitle: ["jobTitle"] },
-            { role: ["role"] }
+            { birthDate: [new Date("1924-04-03 01:01:01").toISOString()] },
+            { age: [getAge(new Date("1924-04-03 01:01:01"))] },
+            { email: ["Vito@Genco.com"] },
+            { gender: ["male"] },
+            { homeTown: ["Omaha, Nebraska"] },
+            { jobTitle: ["Don"] },
+            { role: ["super"] }
           ],
           groupId: "1005"
         },
@@ -505,13 +505,13 @@
           jobTitle: "Consigliere",
           role: "admin",
           tags: [
-            { age: ["age"] },
-            { birthDate: ["birthDate"] },
-            { email: ["email"] },
-            { gender: ["gender"] },
-            { homeTown: ["homeTown"] },
-            { jobTitle: ["jobTitle"] },
-            { role: ["role"] }
+            { birthDate: [new Date("1933-09-04 01:01:01").toISOString()] },  
+            { age: [getAge(new Date("1933-09-04 01:01:01"))] },        
+            { email: ["Pete@Genco.com"] },
+            { gender: ["male"] },
+            { homeTown: ["The Bonx, New York"] },
+            { jobTitle: ["Consigliere"] },
+            { role: ["admin"] }
           ],
           groupId: "1005"
         },
@@ -526,13 +526,13 @@
           jobTitle: "Capo",
           role: "super",
           tags: [
-            { age: ["age"] },
-            { birthDate: ["birthDate"] },
-            { email: ["email"] },
-            { gender: ["gender"] },
-            { homeTown: ["homeTown"] },
-            { jobTitle: ["jobTitle"] },
-            { role: ["role"] }
+            { birthDate: [new Date("1924-04-03 01:01:01").toISOString()] },
+            { age: [getAge(new Date("1924-04-03 01:01:01"))] },
+            { email: ["Sal@Genco.com"] },
+            { gender: ["male"] },
+            { homeTown: ["Brooklyn, New York"] },
+            { jobTitle: ["Capo"] },
+            { role: ["super"] }
           ],
           groupId: "1005"
         },
@@ -547,13 +547,13 @@
           jobTitle: "Soldier",
           role: "user",
           tags: [
-            { age: ["age"] },
-            { birthDate: ["birthDate"] },
-            { email: ["email"] },
-            { gender: ["gender"] },
-            { homeTown: ["homeTown"] },
-            { jobTitle: ["jobTitle"] },
-            { role: ["role"] }
+            { birthDate: [new Date("1935-08-12 01:01:01").toISOString()] },
+            { age: [getAge(new Date("1935-08-12 01:01:01"))] },
+            { email: ["Fredo@Genco.com"] },
+            { gender: ["male"] },
+            { homeTown: ["Revere" + ", Massachusetts"] },
+            { jobTitle: ["Soldier"] },
+            { role: ["user"] }
           ],
           groupId: "1005"
         },
@@ -568,18 +568,18 @@
           jobTitle: "Enforcer",
           role: "read-only",
           tags: [
-            { age: ["age"] },
-            { birthDate: ["birthDate"] },
-            { email: ["email"] },
-            { gender: ["gender"] },
-            { homeTown: ["homeTown"] },
-            { jobTitle: ["jobTitle"] },
-            { role: ["role"] }
+            { birthDate: [new Date("1926-03-13 01:01:01").toISOString()] },  
+            { age: [getAge(new Date("1926-03-13 01:01:01"))] },
+            { email: ["Luke@Genco.com"] },
+            { gender: ["male"] },
+            { homeTown: ["homeTBrooklyn, New Yorkown"] },
+            { jobTitle: ["Enforcer"] },
+            { role: ["read-only"] }
           ],
           groupId: "1005"
         }
       ];
-
+////////////////////////////////////
       var accounts = [
         {
           groupId: "1001",
@@ -595,13 +595,15 @@
             contractValue: 100000,
             monthly_value: this.contractValue / 12,
             tags: [
-              { industry: ["industry"] },
-              { csmAssigned: ["csmAssigned"] },
-              { employees: ["employees"] },
-              { plan: ["plan"] },
-              { contractStart: ["contractStart"] },
-              { contractEnd: ["contractEnd"] },
-              { contractValue: ["contractValue"] }
+              { industry: ["Financial Technology"] },
+              { csmAssigned: ["James W."] },
+              { employees: ["1502"] },
+              { location: ["Austin, TX"] },
+              { name: ["Initech"] },
+              { plan: ["Enterprise"] },
+              { contractStart: [new Date("1999-02-19").toISOString()] },
+              { contractEnd: [new Date("2021-02-18").toISOString()] },
+              { contractValue: ["100000"] }
             ]
           }
         },
@@ -619,13 +621,15 @@
             contractValue: 25000,
             monthly_value: this.contractValue / 12,
             tags: [
-              { industry: ["industry"] },
-              { csmAssigned: ["csmAssigned"] },
-              { employees: ["employees"] },
-              { plan: ["plan"] },
-              { contractStart: ["contractStart"] },
-              { contractEnd: ["contractEnd"] },
-              { contractValue: ["contractValue"] }
+              { industry: ["Paper Supply"] },
+              { csmAssigned: ["Beth G."] },
+              { employees: [22] },
+              { location: ["Scranton, PA"] },
+              { name: ["Dunder Mifflin Paper Company, Inc."] },
+              { plan: ["Corporate"] },
+              { contractStart: [new Date("2005-03-24").toISOString()] },
+              { contractEnd: [new Date("2021-03-23").toISOString()] },
+              { contractValue: ["25000"] }
             ]
           }
         },
@@ -643,13 +647,15 @@
             contractValue: 350000,
             monthly_value: this.contractValue / 12,
             tags: [
-              { industry: ["industry"] },
-              { csmAssigned: ["csmAssigned"] },
-              { employees: ["employees"] },
-              { plan: ["plan"] },
-              { contractStart: ["contractStart"] },
-              { contractEnd: ["contractEnd"] },
-              { contractValue: ["contractValue"] }
+              { industry: ["Genetic Engineering"] },
+              { csmAssigned: ["Erin W."] },
+              { employees: [6117] },
+              { location: ["Isla Nublar, Costa Rica"] },
+              { name: ["InGen"] },
+              { plan: ["Strategic"] },
+              { contractStart: [new Date("1993-06-11").toISOString()] },
+              { contractEnd: [new Date("2021-06-10").toISOString()] },
+              { contractValue: ["350000"] }
             ]
           }
         },
@@ -670,10 +676,12 @@
               { industry: ["industry"] },
               { csmAssigned: ["csmAssigned"] },
               { employees: ["employees"] },
+              { location: ["New York, NY"] },
+              { name: ["Ghost Busters"] },
               { plan: ["plan"] },
-              { contractStart: ["contractStart"] },
-              { contractEnd: ["contractEnd"] },
-              { contractValue: ["contractValue"] }
+              { contractStart: [new Date("1984-06-07").toISOString()] },
+              { contractEnd: [new Date("2021-06-06").toISOString()] },
+              { contractValue: ["12000"] }
             ]
           }
         },
@@ -694,10 +702,12 @@
               { industry: ["industry"] },
               { csmAssigned: ["csmAssigned"] },
               { employees: ["employees"] },
+              { location: ["New York, NY"] },
+              { name: ["Genco Olive Oil Company"] },
               { plan: ["plan"] },
-              { contractStart: ["contractStart"] },
-              { contractEnd: ["contractEnd"] },
-              { contractValue: ["contractValue"] }
+              { contractStart: [new Date("1922-03-21").toISOString()] },
+              { contractEnd: [new Date("2021-03-20").toISOString()] },
+              { contractValue: ["100000"] }
             ]
           }
         }
